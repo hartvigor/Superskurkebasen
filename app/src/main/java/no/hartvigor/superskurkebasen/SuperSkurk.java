@@ -4,12 +4,12 @@ package no.hartvigor.superskurkebasen;
 
 public class SuperSkurk {
     private String skurkNavn;
-    private String skurkImg;
+    private Integer skurkImg;
     private String skurkDato;
-    private String skurkBesk;
+    private Integer skurkBesk;
     private Boolean skurkEtterlyst;
 
-    public SuperSkurk(String skurkNavn, String skurkImg, String villainDate, String villainDsc, Boolean villainWanted) {
+    public SuperSkurk(String skurkNavn, Integer skurkImg, String villainDate, Integer villainDsc, Boolean villainWanted) {
         this.skurkNavn = skurkNavn;
         this.skurkImg = skurkImg;
         this.skurkDato = villainDate;
@@ -31,12 +31,12 @@ public class SuperSkurk {
         this.skurkNavn = skurkNavn;
     }
 
-    public String getSkurkImg()
+    public Integer getSkurkImg()
     {
         return skurkImg;
     }
 
-    public void setSkurkImg(String skurkImg)
+    public void setSkurkImg(int skurkImg)
     {
         this.skurkImg = skurkImg;
     }
@@ -51,12 +51,12 @@ public class SuperSkurk {
         this.skurkDato = skurkDato;
     }
 
-    public String getSkurkBesk()
+    public Integer getSkurkBesk()
     {
         return skurkBesk;
     }
 
-    public void setSkurkBesk(String skurkBesk)
+    public void setSkurkBesk(Integer skurkBesk)
     {
         this.skurkBesk = skurkBesk;
     }

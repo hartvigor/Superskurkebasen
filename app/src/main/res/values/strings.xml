@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Superskurkebasen</string>
+
+    <string name="joker_desc">Jokerens kjennetegn er galskap og ønske om anarki. Han blir fremstilt variert, noen ganger totalt kaldblodig med hat for liv, orden og Batman, andre ganger er han en gal klovn som liker å more seg via dødelige feller og planer. </string>
+    <string name="thanos_desc">Thanos er medlem av en rase kalt «Eternals» og er født på månen Titan. Karakterens navn kommer i utgangspunktet fra dødsguden Thanatos i gresk mytologi. Thanos introduseres først i The Invincible Iron Man #55 (februar 1973). Ferdigheten hans er å skyte «Psykologiske eksplosjoner». Han er veldig smart, sterk og bruker «Infinity Gauntlet»-hansken som våpen.</string>
+    <string name="goblin_desc">Han framstilles som en av Spidermanns farligste fiender. Det grønne trollet er egentlig Norman Osborn, direktør i Oscorp Industries som blitt gal og tatt identiteten Det grønne trollet</string>
+    <string name="eric_cartman_desc">Cartman er ofte veldig slu og mobbende mot enkelte grupper og mennesker, f.eks hippier, jøder og andre minoriteter. Av barna i South Park han plager ofte er særlig Kyle og Butters, og noenganger Kenny som utsettes oftest. Han er best kjent under sitt etternavn. Alle barna kaller han Cartman, mens alle voksne pluss Butters kaller han Eric</string>
+    <string name="harley_quinn_desc">Harley Quinn er den tidligere kjæresten og sidemannen til Jokeren; en kriminell psykolog ble flamboyant kriminell trussel. Mens intensjonene hennes vanligvis er gode, forråder metodene hennes ofte galskapen hennes.</string>
+    <string name="riddler_desc">The Riddler er ofte avbildet som en kriminell hjerne i Gotham City som gleder seg over å inkorporere gåter og gåter i planene sine, og etterlater dem som ledetråder for myndighetene å løse</string>
+    <string name="venon_desc">Venom, en stor og vridd forvrengning av Spider-Man, er resultatet av en romvesen symbiot slått sammen med et menneske som bærer et bittert nag mot Peter Parker. Denne kombinasjonen har vist seg nesten dødelig for vegg-crawleren flere ganger.</string>
+
 </resources>
