@@ -2,7 +2,10 @@ package no.hartvigor.superskurkebasen;
 
 //Klasse for skurkeinformasjon
 
-public class SuperSkurk {
+import java.io.Serializable;
+
+// Serializabale
+public class SuperSkurk implements Serializable {
     private String skurkNavn;
     private Integer skurkImg;
     private String skurkDato;
