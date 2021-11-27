@@ -21,11 +21,14 @@ public class VillainDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //setContentView(R.layout.activity_villain_details);
 
         // Setter aktivitetes binding layout med auto-generete binding klassen "ActivityVillainDetailsBinding".
         // Tilgjengeligjør alle binding id'er i layouten
         ActivityVillainDetailsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_villain_details);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Hente bundle med skurk fra forrige aktivitet
         if (getIntent().getExtras() != null && getIntent().hasExtra("data")) {
@@ -36,5 +39,12 @@ public class VillainDetailsActivity extends AppCompatActivity {
         // Binder skurk objektet til layouten
         binding.setSuperSkurk(skurk);
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp()
+    {
+        onBackPressed();
+        return true;
     }
 }

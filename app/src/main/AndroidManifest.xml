@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Superskurkebasen">
         <activity
             android:name=".VillainDetailsActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
