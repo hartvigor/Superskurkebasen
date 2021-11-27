@@ -6,8 +6,13 @@ android {
     dataBinding {
         enabled = true
     }
+
     buildFeatures{
         dataBinding true
+    }
+
+    viewBinding {
+        enabled = true
     }
 
     compileSdk 30

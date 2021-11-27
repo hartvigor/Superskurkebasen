@@ -1,41 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:padding="10dp"
-    android:id="@+id/parent_layout">
 
-    // Profilbilde av skurken
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<layout>
+    <data>
+        <variable
+            name="item_skurk"
+            type="no.hartvigor.superskurkebasen.classes.SuperSkurk" />
+    </data>
 
-    // Skurkens navn
-    <TextView
-        android:id="@+id/profile_name"
-        android:text="@{superskurk.skurkNavn}"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/img"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Test: Navn Navnesen" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        xmlns:tools="http://schemas.android.com/tools"
+        android:padding="10dp"
+        android:id="@+id/parent_layout">
+
+        // Profilbilde av skurken
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@{item_skurk.skurkImg}"
+            app:imageResource="@{item_skurk.skurkImg}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_launcher_background"/>
+
+        // Skurkens navn
+        <TextView
+            android:id="@+id/profile_name"
+            android:text="@{item_skurk.skurkNavn}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/img"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Test: Navn Navnesen" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
 
 

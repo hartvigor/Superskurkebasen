@@ -26,6 +26,7 @@ public class SuperSkurk implements Serializable {
 
     }
 
+
     // Return for databinding til XML for Boolean
     public String isWanted() {
         return skurkEtterlyst.toString();
