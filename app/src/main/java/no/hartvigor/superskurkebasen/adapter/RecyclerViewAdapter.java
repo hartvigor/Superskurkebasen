@@ -16,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import no.hartvigor.superskurkebasen.R;
-import no.hartvigor.superskurkebasen.SuperSkurk;
+import no.hartvigor.superskurkebasen.classes.SuperSkurk;
 import no.hartvigor.superskurkebasen.VillainDetailsActivity;
 
 // Extends Adapter<Type> = ViewHolder laget i klassen. Lager en Adapter
@@ -34,7 +34,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     // @Override obligatoriske metoder for klassen
     @NonNull
 
-    // Recycler viewholds og setter de der de skal
+    // Recycler viewholds og plasserer de
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_list, parent, false);
@@ -42,7 +42,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return holder;
     }
 
-    //Kalles hver gang en ny item blir lagt til
+    // Kalles hver gang en ny item blir lagt til
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
 

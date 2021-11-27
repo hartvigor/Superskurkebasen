@@ -1,18 +1,20 @@
-package no.hartvigor.superskurkebasen;
+package no.hartvigor.superskurkebasen.classes;
 
 //Klasse for skurkeinformasjon
 
 import java.io.Serializable;
 
+import androidx.annotation.DrawableRes;
+
 // Serializabale
 public class SuperSkurk implements Serializable {
     private String skurkNavn;
-    private Integer skurkImg;
+    private @DrawableRes Integer skurkImg;
     private String skurkDato;
     private Integer skurkBesk;
     private Boolean skurkEtterlyst;
 
-    public SuperSkurk(String skurkNavn, Integer skurkImg, String villainDate, Integer villainDsc, Boolean villainWanted) {
+    public SuperSkurk(String skurkNavn, @DrawableRes Integer skurkImg, String villainDate, Integer villainDsc, Boolean villainWanted) {
         this.skurkNavn = skurkNavn;
         this.skurkImg = skurkImg;
         this.skurkDato = villainDate;
@@ -22,6 +24,11 @@ public class SuperSkurk implements Serializable {
 
     public SuperSkurk() {
 
+    }
+
+    // Return for databinding til XML for Boolean
+    public String isWanted() {
+        return skurkEtterlyst.toString();
     }
 
     public String getSkurkNavn()
@@ -34,7 +41,7 @@ public class SuperSkurk implements Serializable {
         this.skurkNavn = skurkNavn;
     }
 
-    public Integer getSkurkImg()
+    public @DrawableRes Integer getSkurkImg()
     {
         return skurkImg;
     }

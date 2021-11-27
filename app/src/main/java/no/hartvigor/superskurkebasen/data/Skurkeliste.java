@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import no.hartvigor.superskurkebasen.R;
-import no.hartvigor.superskurkebasen.SuperSkurk;
+import no.hartvigor.superskurkebasen.classes.SuperSkurk;
 
 public class Skurkeliste {
     public List<SuperSkurk> getList(){
