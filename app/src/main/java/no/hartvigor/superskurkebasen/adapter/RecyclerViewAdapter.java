@@ -29,6 +29,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private Context context;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        // Data Binding - Holder alle variabler for viewet
         private LayoutItemListBinding binding;
 
         public ViewHolder(@NonNull LayoutItemListBinding itemListBinding) {
