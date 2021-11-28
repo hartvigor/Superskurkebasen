@@ -2,14 +2,18 @@ package no.hartvigor.superskurkebasen;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import no.hartvigor.superskurkebasen.classes.SuperSkurk;
 import no.hartvigor.superskurkebasen.databinding.ActivityVillainDetailsBinding;
+import no.hartvigor.superskurkebasen.viewmodel.VillainDetailsModel;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +21,7 @@ import android.widget.Toast;
 public class VillainDetailsActivity extends AppCompatActivity {
 
     private SuperSkurk skurk;
+    private VillainDetailsModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,9 @@ public class VillainDetailsActivity extends AppCompatActivity {
          *         // Tilgjengeligjør alle binding id'er i layouten
          */
         ActivityVillainDetailsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_villain_details);
+        model = new VillainDetailsModel();
+        binding.setVariable(BR.model, model);
+        binding.setLifecycleOwner(this);
 
         /**
          * Setter tilbakeknapp aktiv i actionbar
@@ -44,7 +52,22 @@ public class VillainDetailsActivity extends AppCompatActivity {
         /**
          *  Binder skurk objektet til layouten
          */
-        binding.setSuperSkurk(skurk);
+
+        model.skurk.observe(this, superSkurk -> model.skurk.postValue(superSkurk));
+        model.skurk.setValue(skurk);
+
+        new Handler(Looper.myLooper()).postDelayed((Runnable) () -> {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    SuperSkurk skurk = model.skurk.getValue();
+                    skurk.setSkurkNavn("PotetJagern");
+                    Toast.makeText(VillainDetailsActivity.this, "Oppdatert", Toast.LENGTH_LONG).show();
+                }
+            });
+        }, 350);
+
+
     }
 
     /**

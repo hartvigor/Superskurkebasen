@@ -5,6 +5,7 @@ package no.hartvigor.superskurkebasen.classes;
 import java.io.Serializable;
 
 import androidx.annotation.DrawableRes;
+import androidx.annotation.StringRes;
 import no.hartvigor.superskurkebasen.R;
 
 // Serializabale
@@ -32,6 +33,10 @@ public class SuperSkurk implements Serializable {
     private String etterlystString;
     public String isWanted() {
         return skurkEtterlyst.toString();
+    }
+
+    public @StringRes Integer isWantedRes() {
+        return (skurkEtterlyst.equals("Ikke etterlyst")) ? R.string.etterlyst_false : R.string.etterlyst_true;
     }
 
     public String getSkurkNavn()

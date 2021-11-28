@@ -8,6 +8,10 @@
         <variable
             name="superSkurk"
             type="no.hartvigor.superskurkebasen.classes.SuperSkurk" />
+
+        <variable
+            name="model"
+            type="no.hartvigor.superskurkebasen.viewmodel.VillainDetailsModel" />
     </data>
 
     <ScrollView
@@ -25,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@{superSkurk.isWanted()}"
+                android:text="@{model.skurk.isWantedRes()}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +42,7 @@
                 android:layout_height="200dp"
                 android:layout_marginTop="8dp"
                 android:scaleType="centerInside"
-                app:imageResource="@{superSkurk.skurkImg}"
+                app:imageResource="@{model.skurk.skurkImg}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textWanted"
@@ -49,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@{superSkurk.skurkNavn}"
+                android:text="@{model.skurk.skurkNavn}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@{superSkurk.skurkDato}"
+                android:text="@{model.skurk.skurkDato}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:padding="20dp"
-                android:text="@{superSkurk.skurkBesk}"
+                android:text="@{model.skurk.skurkBesk}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
