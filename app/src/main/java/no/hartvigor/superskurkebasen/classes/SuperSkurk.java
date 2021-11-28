@@ -5,6 +5,7 @@ package no.hartvigor.superskurkebasen.classes;
 import java.io.Serializable;
 
 import androidx.annotation.DrawableRes;
+import no.hartvigor.superskurkebasen.R;
 
 // Serializabale
 public class SuperSkurk implements Serializable {
@@ -28,6 +29,7 @@ public class SuperSkurk implements Serializable {
 
 
     // Return for databinding til XML for Boolean
+    private String etterlystString;
     public String isWanted() {
         return skurkEtterlyst.toString();
     }

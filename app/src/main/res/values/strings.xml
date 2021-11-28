@@ -9,4 +9,7 @@
     <string name="riddler_desc">The Riddler er ofte avbildet som en kriminell hjerne i Gotham City som gleder seg over å inkorporere gåter og gåter i planene sine, og etterlater dem som ledetråder for myndighetene å løse</string>
     <string name="venon_desc">Venom, en stor og vridd forvrengning av Spider-Man, er resultatet av en romvesen symbiot slått sammen med et menneske som bærer et bittert nag mot Peter Parker. Denne kombinasjonen har vist seg nesten dødelig for vegg-crawleren flere ganger.</string>
 
+    <string name="etterlyst_true">ETTERLYST</string>
+    <string name="etterlyst_false">Ikke etterlyst</string>
+    <string name="navn">Skurk Skurkesen</string>
 </resources>

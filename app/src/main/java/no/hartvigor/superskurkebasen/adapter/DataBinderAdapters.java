@@ -10,5 +10,4 @@ public class DataBinderAdapters {
     public static void setImageDrawable(ImageView view, Drawable drawable) {
         view.setImageDrawable(drawable);
     }
-
 }
