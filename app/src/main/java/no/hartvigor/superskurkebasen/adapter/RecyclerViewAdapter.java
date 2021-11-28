@@ -2,6 +2,8 @@ package no.hartvigor.superskurkebasen.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,69 +14,67 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
+import no.hartvigor.superskurkebasen.MainActivity;
 import no.hartvigor.superskurkebasen.R;
-import no.hartvigor.superskurkebasen.SuperSkurk;
+import no.hartvigor.superskurkebasen.classes.SuperSkurk;
+import no.hartvigor.superskurkebasen.VillainDetailsActivity;
+import no.hartvigor.superskurkebasen.databinding.LayoutItemListBinding;
 
 // Extends Adapter<Type> = ViewHolder laget i klassen. Lager en Adapter
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    private static final String TAG = "RecyclerViewAdapter";
-    //deklare variabler som trengs for klassen
+    private List<SuperSkurk> skurker;
+    private LayoutInflater layoutInflater;
     private Context context;
-    private List<SuperSkurk> items;
 
-    public RecyclerViewAdapter(Context context, List<SuperSkurk> items) {
-        this.context = context;
-        this.items = items;
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        // Data Binding - Holder alle variabler for viewet
+        private LayoutItemListBinding binding;
+
+        public ViewHolder(@NonNull LayoutItemListBinding itemListBinding) {
+            super(itemListBinding.getRoot());
+            this.binding = itemListBinding;
+        }
     }
 
-    // @Override obligatoriske metoder for klassen
-    @NonNull
+    public RecyclerViewAdapter(Context context, List<SuperSkurk> superSkurks) {
+        this.context = context;
+        this.skurker = superSkurks;
+    }
 
-    // Recycler viewholds og setter de der de skal
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_list, parent, false);
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+        if(layoutInflater == null) {
+            layoutInflater = LayoutInflater.from(parent.getContext());
+        }
+        LayoutItemListBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.layout_item_list, parent, false);
+        return new ViewHolder(binding);
     }
 
-    //Kalles hver gang en ny item blir lagt til
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        SuperSkurk skurk = skurker.get(position);
+        holder.binding.setItemSkurk(skurk);
+        holder.binding.executePendingBindings();
 
-        // Henter ut en skurk (item) fra listen av skurker (items) - bruker position for å hente ut skurken
-        SuperSkurk item = items.get(position);
-
-        holder.name.setText(item.getSkurkNavn());
-
-        holder.parentLayout.setOnClickListener(new View.OnClickListener() {
-
+        holder.binding.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Bundle b = new Bundle();
+                b.putSerializable("data", skurk);
+                Intent i = new Intent(context, VillainDetailsActivity.class);
+                i.putExtras(b);
+                context.startActivity(i);
             }
         });
     }
 
-    // Forteller adapteren hvor mange items er i listen
     @Override
     public int getItemCount() {
-        return items.size();
+        return skurker.size();
     }
 
-    // Henter og setter referanser for bruk widgets i liste
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        // Deklarer widgets for view
-        ImageView imageView;
-        TextView name;
-        ConstraintLayout parentLayout;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            imageView = itemView.findViewById(R.id.img);
-            name = itemView.findViewById(R.id.profile_name);
-            parentLayout = itemView.findViewById(R.id.parent_layout);
-        }
-    }
 }
