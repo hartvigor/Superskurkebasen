@@ -13,9 +13,9 @@ public class SuperSkurk implements Serializable {
     private @DrawableRes Integer skurkImg;
     private String skurkDato;
     private Integer skurkBesk;
-    private Boolean skurkEtterlyst;
+    private String skurkEtterlyst;
 
-    public SuperSkurk(String skurkNavn, @DrawableRes Integer skurkImg, String villainDate, Integer villainDsc, Boolean villainWanted) {
+    public SuperSkurk(String skurkNavn, @DrawableRes Integer skurkImg, String villainDate, Integer villainDsc, String villainWanted) {
         this.skurkNavn = skurkNavn;
         this.skurkImg = skurkImg;
         this.skurkDato = villainDate;
@@ -74,12 +74,12 @@ public class SuperSkurk implements Serializable {
         this.skurkBesk = skurkBesk;
     }
 
-    public Boolean getSkurkEtterlyst()
+    public String getSkurkEtterlyst()
     {
         return skurkEtterlyst;
     }
 
-    public void setSkurkEtterlyst(Boolean skurkEtterlyst)
+    public void setSkurkEtterlyst(String skurkEtterlyst)
     {
         this.skurkEtterlyst = skurkEtterlyst;
     }
